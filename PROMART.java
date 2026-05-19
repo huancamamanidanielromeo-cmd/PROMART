@@ -3,14 +3,26 @@ import java.util.Scanner;
 public class PROMART {
 
     // Variables
+
+
+
+    
     static String correoRegistrado = "";
     static String correoLogin = "";
     static String numDocumento = "";
     static String nombreTitular = "";
+
+    
     static double precio = 0.0; // Variable global
 
+
+    
     public static void main(String[] args) {
+
+
+        
         Scanner escaner = new Scanner(System.in);
+        
 
         String contraRegistrada = "";
         String contraLogin = "";
@@ -18,10 +30,14 @@ public class PROMART {
 
 
 
-
         
         // Bucle
+
+
+        
         while (opcionMenu != 4) {
+
+            
             System.out.println();
             System.out.println("___________________ BIENVENIDO A PROMART __________________");
             System.out.println("1. Iniciar Sesion");
@@ -31,20 +47,26 @@ public class PROMART {
             System.out.print("Elige una opcion: ");
             opcionMenu = escaner.nextInt();
 
+
+            
             switch (opcionMenu) {
+                    
                 case 1:
+
+                    
                     System.out.println();
                     System.out.println("___________________ INICIO DE SESIÓN __________________");
                     System.out.print("Introduce tu correo: ");
                     correoLogin = escaner.next();
                     System.out.print("Introduce tu contrasena: ");
                     contraLogin = escaner.next();
+                    
+                    // Verificacion
 
 
 
 
                     
-                    // Verificacion
                     if (correoLogin.equals(correoRegistrado) && contraLogin.equals(contraRegistrada) && !correoRegistrado.equals("")) {
                         System.out.println("¡Login exitoso! Bienvenido de nuevo.");
                         menuCategorias(escaner);
@@ -60,7 +82,6 @@ public class PROMART {
 
                     String clave1 = "";
                     String clave2 = "";
-
 
 
 
@@ -100,10 +121,6 @@ public class PROMART {
 
     
     // Menú de Categorías
-
-
-
-
     
     public static void menuCategorias(Scanner escaner) {
         int opcionCategoria = 0;
@@ -138,76 +155,103 @@ public class PROMART {
 
             opcionCategoria = escaner.nextInt();
             switch (opcionCategoria) {
+                    
+                // ABEL 
+
 
 
                     
-                // ABEL
-
-
-                    
-                case 1:subCategoriaLimpieza(teclado); 
+                case 1:
+                    eleccionMenu(opcionCategoria);
+                    subCategoriaAbel(opcionCategoria, escaner);
                     break;
-                case 2: subCategoriaTecnologia(teclado);
+                case 2:
+                    eleccionMenu(opcionCategoria);
+                    subCategoriaAbel(opcionCategoria, escaner);
                     break;
-                case 3:subCategoriaElectrohogar(teclado); 
+                case 3:
+                    eleccionMenu(opcionCategoria);
+                    subCategoriaAbel(opcionCategoria, escaner);
                     break;
-                case 4:subCategoriaMuebles(teclado);
+                case 4:
+                    eleccionMenu(opcionCategoria);
+                    subCategoriaAbel(opcionCategoria, escaner);
                     break;
-                case 5:subCategoriaTerrazas(teclado); 
+                case 5:
+                    eleccionMenu(opcionCategoria);
+                    subCategoriaAbel(opcionCategoria, escaner);
                     break;
-                case 6:subCategoriaBano(teclado);
+                case 6:
+                    eleccionMenu(opcionCategoria);
+                    subCategoriaAbel(opcionCategoria, escaner);
                     break;
-                case 7: subCategoriaHerramientas(teclado);
+                case 7:
+                    eleccionMenu(opcionCategoria);
+                    subCategoriaAbel(opcionCategoria, escaner);
                     break;
-                case 8: subCategoriaPisos(teclado);
-                    break;
-
-               
+                case 8:
                     eleccionMenu(opcionCategoria);
                     subCategoriaAbel(opcionCategoria, escaner);
                     break;
 
+
+                    
                 // ADRIAN
 
 
                     
-                case 9: subCategoriaIluminacion(escaner);
+                case 9:
+                    subCategoriaIluminacion(escaner);
                     break;
-                case 10: subCategoriaOrganizacion(escaner);
+                case 10:
+                    subCategoriaOrganizacion(escaner);
                     break;
-                case 11: subCategoriaCocina(escaner);
+                case 11:
+                    subCategoriaCocina(escaner);
                     break;
-                case 12: subCategoriaDormitorio(escaner); 
+                case 12:
+                    subCategoriaDormitorio(escaner); 
                     break;
-                case 13: subCategoriaConstruccion(escaner);
+                case 13:
+                    subCategoriaConstruccion(escaner);
                     break;
-                case 14: subCategoriaElectricidad(escaner);
+                case 14:
+                    subCategoriaElectricidad(escaner);
                     break;
-                case 15: subCategoriaGasfiteria(escaner); 
+                case 15:
+                    subCategoriaGasfiteria(escaner); 
                     break;
-                case 16: subCategoriaPinturas(escaner); 
+                case 16:
+                    subCategoriaPinturas(escaner); 
                     break;
 
+
+                    
                 // ZAMIR
 
 
                     
-                case 17: subCategoriaFerreteria(escaner);
+                case 17:
+                    subCategoriaFerreteria(escaner);
                     break;
-                case 18: subCategoriaAutomotriz(escaner);
+                case 18:
+                    subCategoriaAutomotriz(escaner);
                     break;
-                case 19: subCategoriaJardineria(escaner);
+                case 19:
+                    subCategoriaJardineria(escaner);
                     break;
-                case 20: subCategoriaOficina(escaner);
+                case 20:
+                    subCategoriaOficina(escaner);
                     break;
-                case 21: subCategoriaInfantil(escaner); 
+                case 21:
+                    subCategoriaInfantil(escaner); 
                     break;
-                case 22: subCategoriaSaludDeportes(escaner); 
+                case 22:
+                    subCategoriaSaludDeportes(escaner); 
                     break;
-                case 23: subCategoriaMascotas(escaner); 
+                case 23:
+                    subCategoriaMascotas(escaner); 
                     break;
-
-
                     
                 case 24:
                     System.out.println("Regresando al menu de inicio...");
@@ -221,34 +265,41 @@ public class PROMART {
 
 
 
+    
+    //PARTE DE ABEL
 
 
-
-    //ABEL
-
-
-
-
+    
 
     public static void eleccionMenu(int categoria){
         switch(categoria){
-            case 1: System.out.println("Usted eligio productos de limpieza "); 
+            case 1:
+                System.out.println("Usted eligio productos de limpieza "); 
                 break;
-            case 2: System.out.println("Usted eligio productos de Tegnología"); 
+            case 2:
+                System.out.println("Usted eligio productos de Tegnología"); 
                 break;
-            case 3: System.out.println("Usted eligio productos de Electrohogar"); 
+            case 3:
+                System.out.println("Usted eligio productos de Electrohogar"); 
                 break;
-            case 4: System.out.println("Usted eligio productos de Muebles");
+            case 4:
+                System.out.println("Usted eligio productos de Muebles");
                 break;
-            case 5: System.out.println("Usted eligio productos de Terraza Y Aire Libre");
+            case 5:
+                System.out.println("Usted eligio productos de Terraza Y Aire Libre");
                 break;
-            case 6: System.out.println("Usted eligio productos de Baño"); 
+            case 6:
+                System.out.println("Usted eligio productos de Baño"); 
                 break;
-            case 7: System.out.println("Usted eligio productos de Herramientas"); 
+            case 7:
+                System.out.println("Usted eligio productos de Herramientas"); 
                 break;
-            case 8: System.out.println("Usted eligio productos de Pisos y cerámicos");
+            case 8:
+                System.out.println("Usted eligio productos de Pisos y cerámicos");
                 break;
-            default: System.out.println("Categoria no valida");
+            default:
+                System.out.println("Categoria no valida");
+                break;
         }
     }
 
@@ -524,47 +575,11 @@ public class PROMART {
 
 
 
+    
+    //PARTE DE ADRIAN
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //ADRIAN
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
     public static void subCategoriaIluminacion(Scanner escaner) {
         System.out.println("\n=== FOCOS LED ===");
@@ -850,26 +865,12 @@ public class PROMART {
 
 
 
+    
+    // PARTE DE ZAMIR
 
 
 
-
-
-
-
-
-
-
-
-
-
-   // Zamir
-
-
-
-
-
-
+    
 
     public static void subCategoriaFerreteria(Scanner S) { pinturas(2, S); }
     public static void subCategoriaAutomotriz(Scanner S) { pinturas(3, S); }
@@ -1055,6 +1056,11 @@ public class PROMART {
                     break;
             }
 
+
+
+
+
+            
             System.out.print("Introduce la cantidad: ");
             cant = S.nextInt();
             precio = precioUnidad * cant;
@@ -1073,7 +1079,9 @@ public class PROMART {
 
 
 
-//sistema de compra o nboleta
+
+    
+    //sistema de compra o nboleta
     public static void procesarCompra(Scanner escaner, double precioCalculado) {
         System.out.println();
         System.out.println("___________________ PROCESO DE PAGO ___________________");
