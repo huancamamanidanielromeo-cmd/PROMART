@@ -1,3 +1,5 @@
+//PARTE DE DANIEL
+
 import java.util.Scanner;
 
 public class PROMART {
@@ -85,8 +87,10 @@ public class PROMART {
 
 
 
+
                     
                     // Repetir
+                    
                     do {
                         System.out.print("Ingresa tu contrasena: ");
                         clave1 = escaner.next();
@@ -116,11 +120,15 @@ public class PROMART {
         escaner.close();
     }
 
+    
+
 
 
 
     
     // Menú de Categorías
+
+    
     
     public static void menuCategorias(Scanner escaner) {
         int opcionCategoria = 0;
@@ -155,6 +163,9 @@ public class PROMART {
 
             opcionCategoria = escaner.nextInt();
             switch (opcionCategoria) {
+
+//////////////////////////////////////////////////////////////////////////////////
+
                     
                 // ABEL 
 
@@ -1058,7 +1069,7 @@ public class PROMART {
 
 
 
-
+//PARTE DE DANIEL
 
             
             System.out.print("Introduce la cantidad: ");
@@ -1082,6 +1093,9 @@ public class PROMART {
 
     
     //sistema de compra o nboleta
+
+
+    
     public static void procesarCompra(Scanner escaner, double precioCalculado) {
         System.out.println();
         System.out.println("___________________ PROCESO DE PAGO ___________________");
@@ -1102,6 +1116,7 @@ public class PROMART {
         System.out.print("Selecciona una opcion: ");
         int pagar = escaner.nextInt();
 
+        
         if (pagar == 1) {
             System.out.println("¡Pago realizado con exito! Tu pedido ha sido procesado. Gracias por comprar en Promart.");
 
