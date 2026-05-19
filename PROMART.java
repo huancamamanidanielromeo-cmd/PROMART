@@ -16,6 +16,10 @@ public class PROMART {
         String contraLogin = "";
         int opcionMenu = 0;
 
+
+
+
+        
         // Bucle
         while (opcionMenu != 4) {
             System.out.println();
@@ -36,7 +40,11 @@ public class PROMART {
                     System.out.print("Introduce tu contrasena: ");
                     contraLogin = escaner.next();
 
-                    // Verificamos
+
+
+
+                    
+                    // Verificacion
                     if (correoLogin.equals(correoRegistrado) && contraLogin.equals(contraRegistrada) && !correoRegistrado.equals("")) {
                         System.out.println("¡Login exitoso! Bienvenido de nuevo.");
                         menuCategorias(escaner);
@@ -53,6 +61,10 @@ public class PROMART {
                     String clave1 = "";
                     String clave2 = "";
 
+
+
+
+                    
                     // Repetir
                     do {
                         System.out.print("Ingresa tu contrasena: ");
@@ -83,7 +95,16 @@ public class PROMART {
         escaner.close();
     }
 
+
+
+
+    
     // Menú de Categorías
+
+
+
+
+    
     public static void menuCategorias(Scanner escaner) {
         int opcionCategoria = 0;
         while (opcionCategoria != 24) {
@@ -117,38 +138,77 @@ public class PROMART {
 
             opcionCategoria = escaner.nextInt();
             switch (opcionCategoria) {
+
+
+                    
                 // ABEL
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
+
+
+                    
+                case 1:subCategoriaLimpieza(teclado); 
+                    break;
+                case 2: subCategoriaTecnologia(teclado);
+                    break;
+                case 3:subCategoriaElectrohogar(teclado); 
+                    break;
+                case 4:subCategoriaMuebles(teclado);
+                    break;
+                case 5:subCategoriaTerrazas(teclado); 
+                    break;
+                case 6:subCategoriaBano(teclado);
+                    break;
+                case 7: subCategoriaHerramientas(teclado);
+                    break;
+                case 8: subCategoriaPisos(teclado);
+                    break;
+
+               
                     eleccionMenu(opcionCategoria);
                     subCategoriaAbel(opcionCategoria, escaner);
                     break;
 
                 // ADRIAN
-                case 9: subCategoriaIluminacion(escaner); break;
-                case 10: subCategoriaOrganizacion(escaner); break;
-                case 11: subCategoriaCocina(escaner); break;
-                case 12: subCategoriaDormitorio(escaner); break;
-                case 13: subCategoriaConstruccion(escaner); break;
-                case 14: subCategoriaElectricidad(escaner); break;
-                case 15: subCategoriaGasfiteria(escaner); break;
-                case 16: subCategoriaPinturas(escaner); break;
+
+
+                    
+                case 9: subCategoriaIluminacion(escaner);
+                    break;
+                case 10: subCategoriaOrganizacion(escaner);
+                    break;
+                case 11: subCategoriaCocina(escaner);
+                    break;
+                case 12: subCategoriaDormitorio(escaner); 
+                    break;
+                case 13: subCategoriaConstruccion(escaner);
+                    break;
+                case 14: subCategoriaElectricidad(escaner);
+                    break;
+                case 15: subCategoriaGasfiteria(escaner); 
+                    break;
+                case 16: subCategoriaPinturas(escaner); 
+                    break;
 
                 // ZAMIR
-                case 17: subCategoriaFerreteria(escaner); break;
-                case 18: subCategoriaAutomotriz(escaner); break;
-                case 19: subCategoriaJardineria(escaner); break;
-                case 20: subCategoriaOficina(escaner); break;
-                case 21: subCategoriaInfantil(escaner); break;
-                case 22: subCategoriaSaludDeportes(escaner); break;
-                case 23: subCategoriaMascotas(escaner); break;
 
+
+                    
+                case 17: subCategoriaFerreteria(escaner);
+                    break;
+                case 18: subCategoriaAutomotriz(escaner);
+                    break;
+                case 19: subCategoriaJardineria(escaner);
+                    break;
+                case 20: subCategoriaOficina(escaner);
+                    break;
+                case 21: subCategoriaInfantil(escaner); 
+                    break;
+                case 22: subCategoriaSaludDeportes(escaner); 
+                    break;
+                case 23: subCategoriaMascotas(escaner); 
+                    break;
+
+
+                    
                 case 24:
                     System.out.println("Regresando al menu de inicio...");
                     break;
@@ -172,14 +232,22 @@ public class PROMART {
 
     public static void eleccionMenu(int categoria){
         switch(categoria){
-            case 1: System.out.println("Usted eligio productos de limpieza "); break;
-            case 2: System.out.println("Usted eligio productos de Tegnología"); break;
-            case 3: System.out.println("Usted eligio productos de Electrohogar"); break;
-            case 4: System.out.println("Usted eligio productos de Muebles"); break;
-            case 5: System.out.println("Usted eligio productos de Terraza Y Aire Libre"); break;
-            case 6: System.out.println("Usted eligio productos de Baño"); break;
-            case 7: System.out.println("Usted eligio productos de Herramientas"); break;
-            case 8: System.out.println("Usted eligio productos de Pisos y cerámicos"); break;
+            case 1: System.out.println("Usted eligio productos de limpieza "); 
+                break;
+            case 2: System.out.println("Usted eligio productos de Tegnología"); 
+                break;
+            case 3: System.out.println("Usted eligio productos de Electrohogar"); 
+                break;
+            case 4: System.out.println("Usted eligio productos de Muebles");
+                break;
+            case 5: System.out.println("Usted eligio productos de Terraza Y Aire Libre");
+                break;
+            case 6: System.out.println("Usted eligio productos de Baño"); 
+                break;
+            case 7: System.out.println("Usted eligio productos de Herramientas"); 
+                break;
+            case 8: System.out.println("Usted eligio productos de Pisos y cerámicos");
+                break;
             default: System.out.println("Categoria no valida");
         }
     }
@@ -287,99 +355,164 @@ public class PROMART {
         switch (subCategoria) {
             case 1:
                 switch(producto){
-                    case 1: precio = 9.90*cantidad; break;
-                    case 2: precio = 44.50*cantidad; break;
-                    case 3: precio = 25*cantidad; break;
-                    case 4: precio = 25*cantidad; break;
-                    case 5: precio = 22.90*cantidad; break;
-                    case 6: precio = 19.90*cantidad; break;
-                    case 7: precio = 28.90*cantidad; break;
-                    case 8: precio = 107.40*cantidad; break;
-                    case 9: precio = 69.90*cantidad; break;
-                    case 10: precio = 11.90*cantidad; break;
+                    case 1: precio = 9.90*cantidad;
+                        break;
+                    case 2: precio = 44.50*cantidad;
+                        break;
+                    case 3: precio = 25*cantidad;
+                        break;
+                    case 4: precio = 25*cantidad; 
+                        break;
+                    case 5: precio = 22.90*cantidad; 
+                        break;
+                    case 6: precio = 19.90*cantidad;
+                        break;
+                    case 7: precio = 28.90*cantidad; 
+                        break;
+                    case 8: precio = 107.40*cantidad; 
+                        break;
+                    case 9: precio = 69.90*cantidad; 
+                        break;
+                    case 10: precio = 11.90*cantidad; 
+                        break;
                 }
                 break;
             case 2:
                 switch(producto){
-                    case 1: precio = 1849*cantidad; break;
-                    case 2: precio = 1619*cantidad; break;
-                    case 3: precio = 2079*cantidad; break;
-                    case 4: precio = 3099*cantidad; break;
-                    case 5: precio = 5299*cantidad; break;
-                    case 6: precio = 3199*cantidad; break;
-                    case 7: precio = 2399*cantidad; break;
-                    case 8: precio = 1599*cantidad; break;
-                    case 9: precio = 1599*cantidad; break;
-                    case 10: precio = 2399*cantidad; break;
+                    case 1: precio = 1849*cantidad; 
+                        break;
+                    case 2: precio = 1619*cantidad; 
+                        break;
+                    case 3: precio = 2079*cantidad; 
+                        break;
+                    case 4: precio = 3099*cantidad;
+                        break;
+                    case 5: precio = 5299*cantidad; 
+                        break;
+                    case 6: precio = 3199*cantidad;
+                        break;
+                    case 7: precio = 2399*cantidad; 
+                        break;
+                    case 8: precio = 1599*cantidad; 
+                        break;
+                    case 9: precio = 1599*cantidad; 
+                        break;
+                    case 10: precio = 2399*cantidad;
+                        break;
                 }
                 break;
             case 3:
                 switch(producto){
-                    case 1: precio = 1249*cantidad; break;
-                    case 2: precio = 1449*cantidad; break;
-                    case 3: precio = 2099*cantidad; break;
-                    case 4: precio = 1299*cantidad; break;
-                    case 5: precio = 1799*cantidad; break;
-                    case 6: precio = 999*cantidad; break;
-                    case 7: precio = 1499*cantidad; break;
-                    case 8: precio = 1599*cantidad; break;
-                    case 9: precio = 999*cantidad; break;
-                    case 10: precio = 799*cantidad; break;
+                    case 1: precio = 1249*cantidad; 
+                        break;
+                    case 2: precio = 1449*cantidad; 
+                        break;
+                    case 3: precio = 2099*cantidad;
+                        break;
+                    case 4: precio = 1299*cantidad;
+                        break;
+                    case 5: precio = 1799*cantidad;
+                        break;
+                    case 6: precio = 999*cantidad;
+                        break;
+                    case 7: precio = 1499*cantidad; 
+                        break;
+                    case 8: precio = 1599*cantidad;
+                        break;
+                    case 9: precio = 999*cantidad;
+                        break;
+                    case 10: precio = 799*cantidad;
+                        break;
                 }
                 break;
             case 4:
                 switch(producto){
-                    case 1: precio = 3598*cantidad; break;
-                    case 2: precio = 3318*cantidad; break;
-                    case 3: precio = 4598*cantidad; break;
-                    case 4: precio = 2518*cantidad; break;
-                    case 5: precio = 3598*cantidad; break;
-                    case 6: precio = 4798*cantidad; break;
-                    case 7: precio = 3638*cantidad; break;
-                    case 8: precio = 3638*cantidad; break;
-                    case 9: precio = 2798*cantidad; break;
-                    case 10: precio = 2518*cantidad; break;
+                    case 1: precio = 3598*cantidad; 
+                        break;
+                    case 2: precio = 3318*cantidad; 
+                        break;
+                    case 3: precio = 4598*cantidad; 
+                        break;
+                    case 4: precio = 2518*cantidad;
+                        break;
+                    case 5: precio = 3598*cantidad;
+                        break;
+                    case 6: precio = 4798*cantidad;
+                        break;
+                    case 7: precio = 3638*cantidad; 
+                        break;
+                    case 8: precio = 3638*cantidad;
+                        break;
+                    case 9: precio = 2798*cantidad; 
+                        break;
+                    case 10: precio = 2518*cantidad; 
+                        break;
                 }
                 break;
             case 5:
                 switch(producto){
-                    case 1: precio = 899*cantidad; break;
-                    case 2: precio = 1299*cantidad; break;
-                    case 3: precio = 249*cantidad; break;
-                    case 4: precio = 599*cantidad; break;
-                    case 5: precio = 159*cantidad; break;
-                    case 6: precio = 1899*cantidad; break;
-                    case 7: precio = 399*cantidad; break;
-                    case 8: precio = 449*cantidad; break;
-                    case 9: precio = 99*cantidad; break;
+                    case 1: precio = 899*cantidad;
+                        break;
+                    case 2: precio = 1299*cantidad; 
+                        break;
+                    case 3: precio = 249*cantidad; 
+                        break;
+                    case 4: precio = 599*cantidad; 
+                        break;
+                    case 5: precio = 159*cantidad; 
+                        break;
+                    case 6: precio = 1899*cantidad;
+                        break;
+                    case 7: precio = 399*cantidad; 
+                        break;
+                    case 8: precio = 449*cantidad;
+                        break;
+                    case 9: precio = 99*cantidad; 
+                        break;
                 }
                 break;
             case 6:
                 switch(producto){
-                    case 1: precio = 349*cantidad; break;
-                    case 2: precio = 199*cantidad; break;
-                    case 3: precio = 129*cantidad; break;
-                    case 4: precio = 49*cantidad; break;
-                    case 5: precio = 499*cantidad; break;
-                    case 6: precio = 79*cantidad; break;
+                    case 1: precio = 349*cantidad;
+                        break;
+                    case 2: precio = 199*cantidad; 
+                        break;
+                    case 3: precio = 129*cantidad;
+                        break;
+                    case 4: precio = 49*cantidad;
+                        break;
+                    case 5: precio = 499*cantidad; 
+                        break;
+                    case 6: precio = 79*cantidad;
+                        break;
                 }
                 break;
             case 7:
                 switch(producto){
-                    case 1: precio = 649*cantidad; break;
-                    case 2: precio = 329*cantidad; break;
-                    case 3: precio = 299*cantidad; break;
-                    case 4: precio = 39*cantidad; break;
-                    case 5: precio = 249*cantidad; break;
+                    case 1: precio = 649*cantidad; 
+                        break;
+                    case 2: precio = 329*cantidad; 
+                        break;
+                    case 3: precio = 299*cantidad;
+                        break;
+                    case 4: precio = 39*cantidad; 
+                        break;
+                    case 5: precio = 249*cantidad; 
+                        break;
                 }
                 break;
             case 8:
                 switch(producto){
-                    case 1: precio = 39.90*cantidad; break;
-                    case 2: precio = 45.90*cantidad; break;
-                    case 3: precio = 24.90*cantidad; break;
-                    case 4: precio = 32.90*cantidad; break;
-                    case 5: precio = 7.90*cantidad; break;
+                    case 1: precio = 39.90*cantidad;
+                        break;
+                    case 2: precio = 45.90*cantidad; 
+                        break;
+                    case 3: precio = 24.90*cantidad; 
+                        break;
+                    case 4: precio = 32.90*cantidad;
+                        break;
+                    case 5: precio = 7.90*cantidad;
+                        break;
                 }
                 break;
         }
