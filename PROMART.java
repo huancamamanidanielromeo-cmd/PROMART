@@ -1,45 +1,30 @@
-//PARTE DE DANIEL
-
 import java.util.Scanner;
+import java.time.format.DateTimeFormatter;
+import java.time.YearMonth;
+import java.time.format.DateTimeParseException;
+import java.time.LocalDateTime;
 
 public class PROMART {
 
-    // Variables
 
-
-
-    
     static String correoRegistrado = "";
     static String correoLogin = "";
     static String numDocumento = "";
     static String nombreTitular = "";
+    static double precio = 0.0;
+    static String contraRegistrada = "";
 
-    
-    static double precio = 0.0; // Variable global
+    // PARTE DE DANIEL
 
-
-    
     public static void main(String[] args) {
 
-
-        
         Scanner escaner = new Scanner(System.in);
-        
-
-        String contraRegistrada = "";
         String contraLogin = "";
         int opcionMenu = 0;
 
-
-
-        
-        // Bucle
-
-
-        
+        // Bucle Prin
         while (opcionMenu != 4) {
 
-            
             System.out.println();
             System.out.println("___________________ BIENVENIDO A PROMART __________________");
             System.out.println("1. Iniciar Sesion");
@@ -49,69 +34,81 @@ public class PROMART {
             System.out.print("Elige una opcion: ");
             opcionMenu = escaner.nextInt();
 
-
-            
             switch (opcionMenu) {
-                    
                 case 1:
-
-                    
                     System.out.println();
                     System.out.println("___________________ INICIO DE SESIÓN __________________");
                     System.out.print("Introduce tu correo: ");
                     correoLogin = escaner.next();
                     System.out.print("Introduce tu contrasena: ");
                     contraLogin = escaner.next();
-                    
-                    // Verificacion
 
-
-
-
-                    
+                    // Verifi
                     if (correoLogin.equals(correoRegistrado) && contraLogin.equals(contraRegistrada) && !correoRegistrado.equals("")) {
                         System.out.println("¡Login exitoso! Bienvenido de nuevo.");
+                        menuCategorias(escaner);
+                    } else if (correoLogin.equals("admin@gmail.com") && contraLogin.equals("12345678@")) {
+                        // Acceso de prueba extraído de tu código
+                        System.out.println("Ingreso exitoso a Promart. Bienvenido Admin.");
                         menuCategorias(escaner);
                     } else {
                         System.out.println("Error: Correo o contrasena incorrectos, o no estas registrado.");
                     }
                     break;
+
                 case 2:
                     System.out.println();
                     System.out.println("___________________ REGISTRO DE USUARIO ___________________");
-                    System.out.print("Ingresa tu nuevo correo: ");
-                    correoRegistrado = escaner.next();
+
+                    boolean correoValido = false;
+                    do {
+                        System.out.print("Ingresa tu nuevo correo: ");
+                        correoRegistrado = escaner.next();
+                        // Regla de validación de correo adaptada
+                        if (correoRegistrado.contains("@") && correoRegistrado.endsWith(".com")) {
+                            correoValido = true;
+                        } else {
+                            System.out.println("Error: El correo debe contener '@' y terminar en '.com'");
+                        }
+                    } while (!correoValido);
 
                     String clave1 = "";
                     String clave2 = "";
+                    boolean passValida = false;
 
-
-
-
-                    
-                    // Repetir
-                    
                     do {
                         System.out.print("Ingresa tu contrasena: ");
                         clave1 = escaner.next();
                         System.out.print("Repite tu contrasena: ");
                         clave2 = escaner.next();
+
+                        // Regla de validación de contraseña adaptada
+                        boolean estructuraPassOk = clave1.length() >= 8 && (clave1.contains("#") || clave1.contains("@"));
+
                         if (!clave1.equals(clave2)) {
                             System.out.println("Las contrasenas no coinciden. Intenta otra vez.");
+                        } else if (!estructuraPassOk) {
+                            System.out.println("Error: La contraseña debe tener mínimo 8 caracteres y contener '#' o '@'");
+                        } else {
+                            passValida = true;
                         }
-                    } while (!clave1.equals(clave2));
+                    } while (!passValida);
+
                     contraRegistrada = clave1;
                     System.out.println("¡Cuenta creada con exito! Ahora puedes comprar.");
                     menuCategorias(escaner);
                     break;
+
                 case 3:
                     System.out.println();
                     System.out.println("Entrando en modo Invitado...");
                     menuCategorias(escaner);
                     break;
+
                 case 4:
                     System.out.println("Saliendo del sistema... ¡Gracias por visitarnos!");
                     break;
+
                 default:
                     System.out.println("Opcion no valida. Pon un numero del 1 al 4.");
                     break;
@@ -120,15 +117,8 @@ public class PROMART {
         escaner.close();
     }
 
-    
+    // Men Categorias
 
-
-
-
-    
-    // Menú de Categorías
-
-    
     
     public static void menuCategorias(Scanner escaner) {
         int opcionCategoria = 0;
@@ -165,13 +155,7 @@ public class PROMART {
             switch (opcionCategoria) {
 
 //////////////////////////////////////////////////////////////////////////////////
-
-                    
-                // ABEL 
-
-
-
-                    
+                // ABEL
                 case 1:
                     eleccionMenu(opcionCategoria);
                     subCategoriaAbel(opcionCategoria, escaner);
@@ -205,12 +189,7 @@ public class PROMART {
                     subCategoriaAbel(opcionCategoria, escaner);
                     break;
 
-
-                    
                 // ADRIAN
-
-
-                    
                 case 9:
                     subCategoriaIluminacion(escaner);
                     break;
@@ -221,7 +200,7 @@ public class PROMART {
                     subCategoriaCocina(escaner);
                     break;
                 case 12:
-                    subCategoriaDormitorio(escaner); 
+                    subCategoriaDormitorio(escaner);
                     break;
                 case 13:
                     subCategoriaConstruccion(escaner);
@@ -230,18 +209,13 @@ public class PROMART {
                     subCategoriaElectricidad(escaner);
                     break;
                 case 15:
-                    subCategoriaGasfiteria(escaner); 
+                    subCategoriaGasfiteria(escaner);
                     break;
                 case 16:
-                    subCategoriaPinturas(escaner); 
+                    subCategoriaPinturas(escaner);
                     break;
 
-
-                    
                 // ZAMIR
-
-
-                    
                 case 17:
                     subCategoriaFerreteria(escaner);
                     break;
@@ -255,15 +229,15 @@ public class PROMART {
                     subCategoriaOficina(escaner);
                     break;
                 case 21:
-                    subCategoriaInfantil(escaner); 
+                    subCategoriaInfantil(escaner);
                     break;
                 case 22:
-                    subCategoriaSaludDeportes(escaner); 
+                    subCategoriaSaludDeportes(escaner);
                     break;
                 case 23:
-                    subCategoriaMascotas(escaner); 
+                    subCategoriaMascotas(escaner);
                     break;
-                    
+
                 case 24:
                     System.out.println("Regresando al menu de inicio...");
                     break;
@@ -278,20 +252,16 @@ public class PROMART {
 
     
     //PARTE DE ABEL
-
-
-    
-
     public static void eleccionMenu(int categoria){
         switch(categoria){
             case 1:
-                System.out.println("Usted eligio productos de limpieza "); 
+                System.out.println("Usted eligio productos de limpieza ");
                 break;
             case 2:
-                System.out.println("Usted eligio productos de Tegnología"); 
+                System.out.println("Usted eligio productos de Tegnología");
                 break;
             case 3:
-                System.out.println("Usted eligio productos de Electrohogar"); 
+                System.out.println("Usted eligio productos de Electrohogar");
                 break;
             case 4:
                 System.out.println("Usted eligio productos de Muebles");
@@ -300,10 +270,10 @@ public class PROMART {
                 System.out.println("Usted eligio productos de Terraza Y Aire Libre");
                 break;
             case 6:
-                System.out.println("Usted eligio productos de Baño"); 
+                System.out.println("Usted eligio productos de Baño");
                 break;
             case 7:
-                System.out.println("Usted eligio productos de Herramientas"); 
+                System.out.println("Usted eligio productos de Herramientas");
                 break;
             case 8:
                 System.out.println("Usted eligio productos de Pisos y cerámicos");
@@ -314,6 +284,9 @@ public class PROMART {
         }
     }
 
+
+
+    
     public static void subCategoriaAbel(int subCategoria, Scanner scanner) {
         int producto = 0;
         int cantidad = 0;
@@ -414,167 +387,105 @@ public class PROMART {
         System.out.print("Cantidad: ");
         cantidad = scanner.nextInt();
 
+
+
+        
         switch (subCategoria) {
             case 1:
                 switch(producto){
-                    case 1: precio = 9.90*cantidad;
-                        break;
-                    case 2: precio = 44.50*cantidad;
-                        break;
-                    case 3: precio = 25*cantidad;
-                        break;
-                    case 4: precio = 25*cantidad; 
-                        break;
-                    case 5: precio = 22.90*cantidad; 
-                        break;
-                    case 6: precio = 19.90*cantidad;
-                        break;
-                    case 7: precio = 28.90*cantidad; 
-                        break;
-                    case 8: precio = 107.40*cantidad; 
-                        break;
-                    case 9: precio = 69.90*cantidad; 
-                        break;
-                    case 10: precio = 11.90*cantidad; 
-                        break;
+                    case 1: precio = 9.90*cantidad; break;
+                    case 2: precio = 44.50*cantidad; break;
+                    case 3: precio = 25*cantidad; break;
+                    case 4: precio = 25*cantidad; break;
+                    case 5: precio = 22.90*cantidad; break;
+                    case 6: precio = 19.90*cantidad; break;
+                    case 7: precio = 28.90*cantidad; break;
+                    case 8: precio = 107.40*cantidad; break;
+                    case 9: precio = 69.90*cantidad; break;
+                    case 10: precio = 11.90*cantidad; break;
                 }
                 break;
             case 2:
                 switch(producto){
-                    case 1: precio = 1849*cantidad; 
-                        break;
-                    case 2: precio = 1619*cantidad; 
-                        break;
-                    case 3: precio = 2079*cantidad; 
-                        break;
-                    case 4: precio = 3099*cantidad;
-                        break;
-                    case 5: precio = 5299*cantidad; 
-                        break;
-                    case 6: precio = 3199*cantidad;
-                        break;
-                    case 7: precio = 2399*cantidad; 
-                        break;
-                    case 8: precio = 1599*cantidad; 
-                        break;
-                    case 9: precio = 1599*cantidad; 
-                        break;
-                    case 10: precio = 2399*cantidad;
-                        break;
+                    case 1: precio = 1849*cantidad; break;
+                    case 2: precio = 1619*cantidad; break;
+                    case 3: precio = 2079*cantidad; break;
+                    case 4: precio = 3099*cantidad; break;
+                    case 5: precio = 5299*cantidad; break;
+                    case 6: precio = 3199*cantidad; break;
+                    case 7: precio = 2399*cantidad; break;
+                    case 8: precio = 1599*cantidad; break;
+                    case 9: precio = 1599*cantidad; break;
+                    case 10: precio = 2399*cantidad; break;
                 }
                 break;
             case 3:
                 switch(producto){
-                    case 1: precio = 1249*cantidad; 
-                        break;
-                    case 2: precio = 1449*cantidad; 
-                        break;
-                    case 3: precio = 2099*cantidad;
-                        break;
-                    case 4: precio = 1299*cantidad;
-                        break;
-                    case 5: precio = 1799*cantidad;
-                        break;
-                    case 6: precio = 999*cantidad;
-                        break;
-                    case 7: precio = 1499*cantidad; 
-                        break;
-                    case 8: precio = 1599*cantidad;
-                        break;
-                    case 9: precio = 999*cantidad;
-                        break;
-                    case 10: precio = 799*cantidad;
-                        break;
+                    case 1: precio = 1249*cantidad; break;
+                    case 2: precio = 1449*cantidad; break;
+                    case 3: precio = 2099*cantidad; break;
+                    case 4: precio = 1299*cantidad; break;
+                    case 5: precio = 1799*cantidad; break;
+                    case 6: precio = 999*cantidad; break;
+                    case 7: precio = 1499*cantidad; break;
+                    case 8: precio = 1599*cantidad; break;
+                    case 9: precio = 999*cantidad; break;
+                    case 10: precio = 799*cantidad; break;
                 }
                 break;
             case 4:
                 switch(producto){
-                    case 1: precio = 3598*cantidad; 
-                        break;
-                    case 2: precio = 3318*cantidad; 
-                        break;
-                    case 3: precio = 4598*cantidad; 
-                        break;
-                    case 4: precio = 2518*cantidad;
-                        break;
-                    case 5: precio = 3598*cantidad;
-                        break;
-                    case 6: precio = 4798*cantidad;
-                        break;
-                    case 7: precio = 3638*cantidad; 
-                        break;
-                    case 8: precio = 3638*cantidad;
-                        break;
-                    case 9: precio = 2798*cantidad; 
-                        break;
-                    case 10: precio = 2518*cantidad; 
-                        break;
+                    case 1: precio = 3598*cantidad; break;
+                    case 2: precio = 3318*cantidad; break;
+                    case 3: precio = 4598*cantidad; break;
+                    case 4: precio = 2518*cantidad; break;
+                    case 5: precio = 3598*cantidad; break;
+                    case 6: precio = 4798*cantidad; break;
+                    case 7: precio = 3638*cantidad; break;
+                    case 8: precio = 3638*cantidad; break;
+                    case 9: precio = 2798*cantidad; break;
+                    case 10: precio = 2518*cantidad; break;
                 }
                 break;
             case 5:
                 switch(producto){
-                    case 1: precio = 899*cantidad;
-                        break;
-                    case 2: precio = 1299*cantidad; 
-                        break;
-                    case 3: precio = 249*cantidad; 
-                        break;
-                    case 4: precio = 599*cantidad; 
-                        break;
-                    case 5: precio = 159*cantidad; 
-                        break;
-                    case 6: precio = 1899*cantidad;
-                        break;
-                    case 7: precio = 399*cantidad; 
-                        break;
-                    case 8: precio = 449*cantidad;
-                        break;
-                    case 9: precio = 99*cantidad; 
-                        break;
+                    case 1: precio = 899*cantidad; break;
+                    case 2: precio = 1299*cantidad; break;
+                    case 3: precio = 249*cantidad; break;
+                    case 4: precio = 599*cantidad; break;
+                    case 5: precio = 159*cantidad; break;
+                    case 6: precio = 1899*cantidad; break;
+                    case 7: precio = 399*cantidad; break;
+                    case 8: precio = 449*cantidad; break;
+                    case 9: precio = 99*cantidad; break;
                 }
                 break;
             case 6:
                 switch(producto){
-                    case 1: precio = 349*cantidad;
-                        break;
-                    case 2: precio = 199*cantidad; 
-                        break;
-                    case 3: precio = 129*cantidad;
-                        break;
-                    case 4: precio = 49*cantidad;
-                        break;
-                    case 5: precio = 499*cantidad; 
-                        break;
-                    case 6: precio = 79*cantidad;
-                        break;
+                    case 1: precio = 349*cantidad; break;
+                    case 2: precio = 199*cantidad; break;
+                    case 3: precio = 129*cantidad; break;
+                    case 4: precio = 49*cantidad; break;
+                    case 5: precio = 499*cantidad; break;
+                    case 6: precio = 79*cantidad; break;
                 }
                 break;
             case 7:
                 switch(producto){
-                    case 1: precio = 649*cantidad; 
-                        break;
-                    case 2: precio = 329*cantidad; 
-                        break;
-                    case 3: precio = 299*cantidad;
-                        break;
-                    case 4: precio = 39*cantidad; 
-                        break;
-                    case 5: precio = 249*cantidad; 
-                        break;
+                    case 1: precio = 649*cantidad; break;
+                    case 2: precio = 329*cantidad; break;
+                    case 3: precio = 299*cantidad; break;
+                    case 4: precio = 39*cantidad; break;
+                    case 5: precio = 249*cantidad; break;
                 }
                 break;
             case 8:
                 switch(producto){
-                    case 1: precio = 39.90*cantidad;
-                        break;
-                    case 2: precio = 45.90*cantidad; 
-                        break;
-                    case 3: precio = 24.90*cantidad; 
-                        break;
-                    case 4: precio = 32.90*cantidad;
-                        break;
-                    case 5: precio = 7.90*cantidad;
-                        break;
+                    case 1: precio = 39.90*cantidad; break;
+                    case 2: precio = 45.90*cantidad; break;
+                    case 3: precio = 24.90*cantidad; break;
+                    case 4: precio = 32.90*cantidad; break;
+                    case 5: precio = 7.90*cantidad; break;
                 }
                 break;
         }
@@ -583,15 +494,11 @@ public class PROMART {
         }
     }
 
-
-
-
-    
     //PARTE DE ADRIAN
 
 
-    
 
+    
     public static void subCategoriaIluminacion(Scanner escaner) {
         System.out.println("\n=== FOCOS LED ===");
         System.out.println("RECOMENDADOS: ");
@@ -873,16 +780,7 @@ public class PROMART {
         if(precio > 0) procesarCompra(escaner, precio);
     }
 
-
-
-
-    
     // PARTE DE ZAMIR
-
-
-
-    
-
     public static void subCategoriaFerreteria(Scanner S) { pinturas(2, S); }
     public static void subCategoriaAutomotriz(Scanner S) { pinturas(3, S); }
     public static void subCategoriaJardineria(Scanner S) { pinturas(4, S); }
@@ -1069,9 +967,10 @@ public class PROMART {
 
 
 
-//PARTE DE DANIEL
 
             
+            //PARTE DE DANIEL
+
             System.out.print("Introduce la cantidad: ");
             cant = S.nextInt();
             precio = precioUnidad * cant;
@@ -1088,26 +987,91 @@ public class PROMART {
     }
 
 
+    public static void validaPagoTarjeta(Scanner escaner, double total) {
+        String nroTarjeta, fechaVencimiento, cvv;
+        boolean pAprobado = false;
+
+        System.out.println("Iniciando Pasarela de Pagos...");
+        System.out.println("Monto total a pagar con tarjeta es: S/. " + total);
+        escaner.nextLine();
+
+
+        
+        do {
+            System.out.print("Ingrese los 16 digitos de la tarjeta: ");
+            nroTarjeta = escaner.nextLine();
+            System.out.print("Ingrese la fecha de caducidad (MM/yy): ");
+            fechaVencimiento = escaner.nextLine();
+            System.out.print("Ingrese el codigo de seguridad CVV: ");
+            cvv = escaner.nextLine();
+
+            boolean tarjetaOk = (nroTarjeta.length() == 16);
+            boolean cvvOk = (cvv.length() == 3);
+            boolean fechaEstructuraOk = (fechaVencimiento.length() == 5 && fechaVencimiento.contains("/"));
+            boolean fechaNoVencida = false;
+
+
+            
+            if (fechaEstructuraOk) {
+                try {
+                    DateTimeFormatter formateador = DateTimeFormatter.ofPattern("MM/yy");
+                    YearMonth fechaTarjeta = YearMonth.parse(fechaVencimiento, formateador);
+                    YearMonth fechaActual = YearMonth.now();
+                    if (fechaTarjeta.isAfter(fechaActual) || fechaTarjeta.equals(fechaActual)) {
+                        fechaNoVencida = true;
+                    }
+                } catch (DateTimeParseException e) {
+                    fechaEstructuraOk = false;
+                }
+            }
+
+
+            
+            if (tarjetaOk && fechaEstructuraOk && fechaNoVencida && cvvOk) {
+                System.out.println("Autorizando fondos... transaccion exitosa.");
+                pAprobado = true;
+            } else {
+                System.out.println("--- Operación denegada por el banco ---");
+                if (!tarjetaOk) {
+                    System.out.println("* El numero de tarjeta debe contener exactamente 16 digitos.");
+                }
+                if (!fechaEstructuraOk) {
+                    System.out.println("* Formato de fecha incorrecto.");
+                }
+                if (fechaEstructuraOk && !fechaNoVencida) {
+                    System.out.println("* Tarjeta caducada.");
+                }
+                if (!cvvOk) {
+                    System.out.println("* El CVV debe contener 3 digitos.");
+                }
+                System.out.println("Intente nuevamente el pago electrónico...");
+            }
+
+        } while (!pAprobado);
+    }
 
 
 
-    
-    //sistema de compra o nboleta
 
-
-    
     public static void procesarCompra(Scanner escaner, double precioCalculado) {
+
+
+
+        
         System.out.println();
         System.out.println("___________________ PROCESO DE PAGO ___________________");
         System.out.print("Introduce tu nombre completo: ");
-        escaner.nextLine(); // Limpiar buffer
+        escaner.nextLine();
         nombreTitular = escaner.nextLine();
         System.out.print("Introduce tu numero de documento (DNI/CE): ");
         numDocumento = escaner.next();
 
+
+
+        
         System.out.println();
         System.out.println("Resumen de tu pedido:");
-        System.out.println("- 1x Producto Seleccionado");
+        System.out.println("- Articulo(s) de Promart");
         System.out.println("- TOTAL A PAGAR: S/. " + precioCalculado);
         System.out.println();
         System.out.println("Metodos de Pago Disponibles:");
@@ -1115,17 +1079,21 @@ public class PROMART {
         System.out.println("2. Cancelar pedido");
         System.out.print("Selecciona una opcion: ");
         int pagar = escaner.nextInt();
-
         
-        if (pagar == 1) {
-            System.out.println("¡Pago realizado con exito! Tu pedido ha sido procesado. Gracias por comprar en Promart.");
 
-            System.out.println();
-            System.out.println("_______________________________________________");
-            System.out.println("               BOLETA DE VENTA                 ");
-            System.out.println("_______________________________________________");
-            System.out.println("Nombre del Titular : " + nombreTitular);
-            System.out.println("Numero de Documento: " + numDocumento);
+        if (pagar == 1) {
+
+            
+
+            validaPagoTarjeta(escaner, precioCalculado);
+
+            
+
+            System.out.println("¡Tu pedido ha sido procesado! Gracias por comprar en Promart.");
+            System.out.println("Generando comprobante electrónico...");
+
+
+            
 
             String correoMostrado = "Invitado";
             if (!correoLogin.equals("")) {
@@ -1133,17 +1101,47 @@ public class PROMART {
             } else if (!correoRegistrado.equals("")) {
                 correoMostrado = correoRegistrado;
             }
-            System.out.println("Correo Electronico : " + correoMostrado);
-            System.out.println("_______________________________________________");
-            System.out.println("Detalle de Compra  :");
-            System.out.println("1x Adquisicion de Articulo Promart");
-            System.out.println("_______________________________________________");
-            System.out.println("TOTAL PAGADO       : S/. " + precioCalculado);
-            System.out.println("_______________________________________________");
-            System.out.println();
+
+            
+
+            double subtotal = precioCalculado / 1.18;
+            double igv = precioCalculado - subtotal;
+            LocalDateTime fechaHora = LocalDateTime.now();
+            DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+            
+
+
+            System.out.println("=================================================");
+            System.out.println("                 HOMECENTERS PERUANOS S.A                ");
+            System.out.println("                  RUC: 20536557858                    ");
+            System.out.println("              Av. Aviación Nro. 2405                 ");
+            System.out.println("              juliaca, Perú                 ");
+            System.out.println("-----------------------------------------------");
+            System.out.println("     BOLETA DE VENTA ELECTRÓNICA             ");
+            System.out.println("     BA01-000458923                     ");
+            System.out.println("-----------------------------------------------------");
+            System.out.println(" FECHA DE EMISION : " + fechaHora.format(formatoFecha));
+            System.out.println(" SEÑOR(A)      : " + nombreTitular);
+            System.out.println(" DNI/CE          : " + numDocumento);
+            System.out.println(" CORREO        : " + correoMostrado);
+            System.out.println("--------------------------------------------------");
+            System.out.println(" CANT.  DESCRIPCION                                      ");
+            System.out.println("  1     Artículos Varios Promart                 S/. " + precioCalculado);
+            System.out.println("------------------------------------------------------");
+            System.out.println(" OP. GRAVADA                     : S/. " + subtotal);
+            System.out.println(" IGV (18%)                      : S/. " + igv);
+            System.out.println("---------------------------------------------------------");
+            System.out.println(" IMPORTE TOTAL                : S/. " + precioCalculado);
+            System.out.println("========================================");
+            System.out.println("   Representación impresa de la Boleta de Venta Electrónica");
+            System.out.println("      Consulte su documento en https://www.promart.ec/facturacion-electronica?srsltid=AfmBOoo87s4zV0bzPSEP_RFUT6sbtU1vEsLwI20LyaiJ5zWsRqy5h1_g ");
+            System.out.println("==========================");
 
         } else {
             System.out.println("Pedido cancelado. Volviendo al menu principal.");
         }
+    }
+    {
     }
 }
