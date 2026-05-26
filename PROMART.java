@@ -1470,24 +1470,7 @@ public class PROMART {
 
             
 
-            System.out.print("Introduce la cantidad: ");
-            cant = S.nextInt();
-            precio = precioUnidad * cant;
-            if(precio > 0) {
-                System.out.println("\nUsted ha escogido: " + nombreProductoSeleccionado + " x" + cant);
-
-                
-                procesarCompra(S, precio);
-            }
-        } else {
-            System.out.println("Opcion no valida");
-            
-        }
-    }
-
-    private static int categoria(int i) {
-        return i;
-    }
+        
 ////////Parte 3
 
     public static void validaPagoTarjeta(Scanner escaner, double total) {
