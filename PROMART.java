@@ -1461,7 +1461,7 @@ public class PROMART {
 
 
 
-            //PARTE DE DANIEL
+            
 
             System.out.print("Introduce la cantidad: ");
             cant = S.nextInt();
@@ -1481,7 +1481,7 @@ public class PROMART {
     private static int categoria(int i) {
         return i;
     }
-
+////////
 
     public static void validaPagoTarjeta(Scanner escaner, double total) {
 
@@ -1575,7 +1575,7 @@ public class PROMART {
         } while (!pAprobado);
     }
 
-
+/////////
 
 
     public static void procesarCompra(Scanner escaner, double precioCalculado) {
