@@ -1471,7 +1471,7 @@ public class PROMART {
             
 
         
-////////Parte 3
+////////Parte 3 abel
 
     public static void validaPagoTarjeta(Scanner escaner, double total) {
 
