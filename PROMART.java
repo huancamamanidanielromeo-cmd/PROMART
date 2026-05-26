@@ -1585,7 +1585,7 @@ public class PROMART {
         System.out.println("___________________ DATOS PERSONALES ___________________");
         System.out.print("Introduce tus Nombres: ");
         
-        escaner.nextLine()
+        escaner.nextLine();
         nombreTitular = escaner.nextLine();
         
         System.out.print("Introduce tus Apellidos: ");
