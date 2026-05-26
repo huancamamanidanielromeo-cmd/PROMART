@@ -1693,7 +1693,7 @@ public class PROMART {
 
             
 
-            System.out.println("=================================================");
+            System.out.println("================================================");
             System.out.println("                 HOMECENTERS PERUANOS S.A                ");
             System.out.println("                  RUC: 20536557858                    ");
             System.out.println("              Av. Aviación Nro. 2405                 ");
