@@ -1734,6 +1734,9 @@ public class PROMART {
             
             System.out.println("Pedido cancelado. Volviendo al menu principal.");
         }
+        System.out.println("Presione **ENTER** para volver al menú principal...");
+
+        escaner.nextLine();
     }
 }
 
