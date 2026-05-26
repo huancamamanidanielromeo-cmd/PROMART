@@ -1,4 +1,4 @@
-
+////parte 1
 import java.util.Scanner;
 import java.time.format.DateTimeFormatter;
 import java.time.YearMonth;
@@ -15,7 +15,7 @@ public class PROMART {
     static double precio = 0.0;
     static String contraRegistrada = "";
     
-//menu de badiables para despues de seleccionar compras
+
     
     static String apellidosTitular = "";
     static String tipoDocumento = "";
@@ -26,7 +26,7 @@ public class PROMART {
     static String nombreProductoSeleccionado = "";
 
     
-    // PARTE DE DANIEL
+ 
 
     
     public static void main(String[] args) {
@@ -173,7 +173,7 @@ public class PROMART {
     }
 
     
-    // Men Categorias
+//PARTE 2
 
 
     public static void menuCategorias(Scanner escaner) {
@@ -1481,7 +1481,7 @@ public class PROMART {
     private static int categoria(int i) {
         return i;
     }
-////////
+////////Parte 3
 
     public static void validaPagoTarjeta(Scanner escaner, double total) {
 
@@ -1575,7 +1575,7 @@ public class PROMART {
         } while (!pAprobado);
     }
 
-/////////
+/////////Parte 4
 
 
     public static void procesarCompra(Scanner escaner, double precioCalculado) {
