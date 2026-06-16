@@ -355,7 +355,7 @@ public class PROMART {
 
 
         
-        //6. BAÑO
+        //6.BAÑO
         nombresBano.add("Combo Sanitario + Lavatorio Blanco");           preciosBano.add(349.00);
         nombresBano.add("Gabinete de Baño con Espejo");                  preciosBano.add(199.00);
         nombresBano.add("Mezcladora para Ducha Cromada");                preciosBano.add(129.00);
@@ -366,7 +366,7 @@ public class PROMART {
 
 
         
-        //7. HERRAMIENTAS
+        //7.HERRAMIENTAS
         nombresHerramientas.add("Rotomartillo Inalámbrico Bosch 20V");                    preciosHerramientas.add(649.00);
         nombresHerramientas.add("Amoladora Angular DeWalt 4-1/2\"");                      preciosHerramientas.add(329.00);
         nombresHerramientas.add("Caja de Herramientas Completa Stanley (150 pzas)");      preciosHerramientas.add(299.00);
@@ -377,7 +377,7 @@ public class PROMART {
 
 
         
-        //8. PISOS Y CERÁMICOS
+        //8.PISOS Y CERÁMICOS
         nombresPisos.add("Porcelanato Pulido 60x60 cm Gris (m2)");              preciosPisos.add(39.90);
         nombresPisos.add("Piso Laminado Madera 8mm (m2)");                      preciosPisos.add(45.90);
         nombresPisos.add("Cerámico Pared Blanco Brillante 30x45 cm (m2)");      preciosPisos.add(24.90);
@@ -388,7 +388,7 @@ public class PROMART {
 
 
         
-        //9. ILUMINACIÓN
+        //9.ILUMINACIÓN
         nombresIluminacion.add("Foco Vintage G45 E27 1W Luz Cálida Clear x6 und Orange"); preciosIluminacion.add(19.90);
         nombresIluminacion.add("Foco Led Smart Wifi Cla60 220V 7W E27 Ledvance");         preciosIluminacion.add(25.00);
         nombresIluminacion.add("Foco High Power Led E27 48W Luz Fría Orange");             preciosIluminacion.add(19.90);
@@ -882,6 +882,7 @@ public class PROMART {
         System.out.println("3. Herramientas");
         System.out.print("Selecciona: ");
         int sub = escaner.nextInt();
+
 
         
         switch (sub) {
