@@ -87,7 +87,7 @@ public class PROMART {
 
 
     
-    //ferret
+
     static ArrayList<String> nombresPuertas       = new ArrayList<>();
     static ArrayList<Double> preciosPuertas       = new ArrayList<>();
     static ArrayList<String> nombresCerraduras    = new ArrayList<>();
@@ -95,7 +95,7 @@ public class PROMART {
     static ArrayList<String> nombresHerramientasFerre = new ArrayList<>();
     static ArrayList<Double> preciosHerramientasFerre = new ArrayList<>();
 
-    //Automotriz
+
     static ArrayList<String> nombresAccAuto       = new ArrayList<>();
     static ArrayList<Double> preciosAccAuto       = new ArrayList<>();
     static ArrayList<String> nombresHerramMec     = new ArrayList<>();
@@ -103,7 +103,7 @@ public class PROMART {
     static ArrayList<String> nombresLlantas       = new ArrayList<>();
     static ArrayList<Double> preciosLlantas       = new ArrayList<>();
 
-    //jardinería
+
     static ArrayList<String> nombresPlantas       = new ArrayList<>();
     static ArrayList<Double> preciosPlantas       = new ArrayList<>();
     static ArrayList<String> nombresHerramJard    = new ArrayList<>();
@@ -111,7 +111,7 @@ public class PROMART {
     static ArrayList<String> nombresRiego         = new ArrayList<>();
     static ArrayList<Double> preciosRiego         = new ArrayList<>();
 
-    //oficina
+
     static ArrayList<String> nombresUtiles        = new ArrayList<>();
     static ArrayList<Double> preciosUtiles        = new ArrayList<>();
     static ArrayList<String> nombresComputadoras  = new ArrayList<>();
@@ -119,7 +119,7 @@ public class PROMART {
     static ArrayList<String> nombresMueblesOfic   = new ArrayList<>();
     static ArrayList<Double> preciosMueblesOfic   = new ArrayList<>();
 
-    // cat infantil
+ 
     static ArrayList<String> nombresJuguetes      = new ArrayList<>();
     static ArrayList<Double> preciosJuguetes      = new ArrayList<>();
     static ArrayList<String> nombresRopaInfantil  = new ArrayList<>();
@@ -127,7 +127,6 @@ public class PROMART {
     static ArrayList<String> nombresMueblesInfant = new ArrayList<>();
     static ArrayList<Double> preciosMueblesInfant = new ArrayList<>();
 
-    // cat salud y deportes
     static ArrayList<String> nombresGimnasio      = new ArrayList<>();
     static ArrayList<Double> preciosGimnasio      = new ArrayList<>();
     static ArrayList<String> nombresBicicletas    = new ArrayList<>();
@@ -135,7 +134,7 @@ public class PROMART {
     static ArrayList<String> nombresVitaminas     = new ArrayList<>();
     static ArrayList<Double> preciosVitaminas     = new ArrayList<>();
 
-    //cat mascotas
+    
     static ArrayList<String> nombresComidaPerros  = new ArrayList<>();
     static ArrayList<Double> preciosComidaPerros  = new ArrayList<>();
     static ArrayList<String> nombresComidaGatos   = new ArrayList<>();
@@ -522,10 +521,6 @@ public class PROMART {
         nombresPuertas.add("Puerta de Madera");  preciosPuertas.add(150.00);
         nombresPuertas.add("Puerta de Metal");   preciosPuertas.add(250.00);
         nombresPuertas.add("Puerta de Vidrio");  preciosPuertas.add(350.00);
-    
-
-
-        
         nombresCerraduras.add("Cerradura de Puerta");       preciosCerraduras.add(30.00);
         nombresCerraduras.add("Cerradura de Seguridad");    preciosCerraduras.add(50.00);
         nombresCerraduras.add("Cerradura Electrónica");     preciosCerraduras.add(80.00);
@@ -536,11 +531,6 @@ public class PROMART {
         nombresHerramientasFerre.add("Martillo");      preciosHerramientasFerre.add(20.00);
         nombresHerramientasFerre.add("Taladro");       preciosHerramientasFerre.add(100.00);
         nombresHerramientasFerre.add("Llave de Tubo"); preciosHerramientasFerre.add(15.00);
-
-
-
-
-        
         nombresAccAuto.add("Cubre Volante");      preciosAccAuto.add(20.00);
         nombresAccAuto.add("Alfombra de Auto");   preciosAccAuto.add(30.00);
         nombresAccAuto.add("GPS para Auto");      preciosAccAuto.add(150.00);
@@ -556,27 +546,13 @@ public class PROMART {
         
         nombresLlantas.add("Llanta de Auto 14");  preciosLlantas.add(120.00);
         nombresLlantas.add("Llanta de Auto 15");  preciosLlantas.add(150.00);
-        nombresLlantas.add("Llanta de Auto 16");  preciosLlantas.add(180.00);
-
-        //jardin
-
-        
+        nombresLlantas.add("Llanta de Auto 16");  preciosLlantas.add(180.00);    
         nombresPlantas.add("Planta de Interior");  preciosPlantas.add(20.00);
         nombresPlantas.add("Planta de Exterior");  preciosPlantas.add(30.00);
         nombresPlantas.add("Árbol Frutal");         preciosPlantas.add(50.00);
-
-        
-        //Herramientas 
-
-        
         nombresHerramJard.add("Pala de Jardín");       preciosHerramJard.add(15.00);
         nombresHerramJard.add("Rastrillo Metálico");   preciosHerramJard.add(10.00);
         nombresHerramJard.add("Tijeras de Podar");     preciosHerramJard.add(20.00);
-        
-        // Riego
-
-
-        
         nombresRiego.add("Manguera de Riego 15m");        preciosRiego.add(20.00);
         nombresRiego.add("Aspersor Giratorio");            preciosRiego.add(30.00);
         nombresRiego.add("Sistema de Riego Automático");   preciosRiego.add(150.00);
@@ -589,23 +565,9 @@ public class PROMART {
         nombresUtiles.add("Cuaderno Anillado A4");          preciosUtiles.add(12.90);
         nombresUtiles.add("Lapiceros Pack x3 Color");       preciosUtiles.add(19.90);
         nombresUtiles.add("Notas Adhesivas Post-it");       preciosUtiles.add(6.50);
-
-
-        
-        // Computadoras
-
-
-        
         nombresComputadoras.add("PC de Escritorio Intel Core i5");  preciosComputadoras.add(2199.00);
         nombresComputadoras.add("Todo en Uno HP 23.8");              preciosComputadoras.add(1899.00);
         nombresComputadoras.add("Monitor Gamer 24 FHD");             preciosComputadoras.add(599.00);
-
-
-        
-        // Muebles oficina
-
-
-        
         nombresMueblesOfic.add("Silla Ergonómica Ejecutiva");    preciosMueblesOfic.add(349.00);
         nombresMueblesOfic.add("Escritorio de Madera en L");     preciosMueblesOfic.add(450.00);
         nombresMueblesOfic.add("Estante de Libros 5 Niveles");   preciosMueblesOfic.add(219.00);
@@ -616,24 +578,10 @@ public class PROMART {
         
         nombresJuguetes.add("Set de Bloques Lego Classic");   preciosJuguetes.add(249.00);
         nombresJuguetes.add("Muñeca Articulada Fashion");     preciosJuguetes.add(89.90);
-        nombresJuguetes.add("Carro a Control Remoto");        preciosJuguetes.add(129.00);
-
-
-        
-        // Ropa infantil
-
-
-        
+        nombresJuguetes.add("Carro a Control Remoto");        preciosJuguetes.add(129.00);   
         nombresRopaInfantil.add("Casaca de Invierno para Niño");   preciosRopaInfantil.add(79.90);
         nombresRopaInfantil.add("Pack de 3 Polos de Algodón");     preciosRopaInfantil.add(45.00);
         nombresRopaInfantil.add("Zapatillas Deportivas Kidz");     preciosRopaInfantil.add(89.00);
-
-
-        
-        // Muebles infantiles
-
-
-        
         nombresMueblesInfant.add("Cuna Corral para Bebé");            preciosMueblesInfant.add(399.00);
         nombresMueblesInfant.add("Organizador de Juguetes");          preciosMueblesInfant.add(149.00);
         nombresMueblesInfant.add("Mesa con 2 Sillas Infantiles");     preciosMueblesInfant.add(189.00);
@@ -647,23 +595,9 @@ public class PROMART {
         nombresGimnasio.add("Caminadora Eléctrica Plegable");        preciosGimnasio.add(1599.00);
         nombresGimnasio.add("Bicicleta Estacionaria Spinning");      preciosGimnasio.add(799.00);
         nombresGimnasio.add("Set de Mancuernas 20kg");               preciosGimnasio.add(199.00);
-
-
-        
-        // Bicicletas
-
-
-        
         nombresBicicletas.add("Bicicleta de Montaña Aro 29");  preciosBicicletas.add(1199.00);
         nombresBicicletas.add("Bicicleta Urbana Aro 26");       preciosBicicletas.add(849.00);
         nombresBicicletas.add("Bicicleta Infantil Aro 16");     preciosBicicletas.add(349.00);
-
-
-        
-        // Vitaminas
-
-
-        
         nombresVitaminas.add("Multivitamínico 90 Cápsulas");   preciosVitaminas.add(69.90);
         nombresVitaminas.add("Colágeno Hidrolizado 500g");      preciosVitaminas.add(89.90);
         nombresVitaminas.add("Proteína Whey 2lb");              preciosVitaminas.add(149.00);
@@ -676,18 +610,9 @@ public class PROMART {
         nombresComidaPerros.add("Alimento Ricocan Adulto 15kg");    preciosComidaPerros.add(129.90);
         nombresComidaPerros.add("Alimento Dog Chow Cachorros 8kg"); preciosComidaPerros.add(85.00);
         nombresComidaPerros.add("Paté para Perro Canbo 330g");      preciosComidaPerros.add(7.50);
-
-
-        
-        // Gatos
-
-        
         nombresComidaGatos.add("Alimento Ricocat Adulto 9kg");    preciosComidaGatos.add(89.90);
         nombresComidaGatos.add("Alimento Whiskas Seco 3kg");       preciosComidaGatos.add(42.00);
         nombresComidaGatos.add("Sobre Felix Filetes en Salsa");    preciosComidaGatos.add(3.20);
-
-        
-        // Accesorios mascotas
         nombresAccMascotas.add("Cama Acolchada Mediana");              preciosAccMascotas.add(59.90);
         nombresAccMascotas.add("Rascador para Gato de 3 Niveles");    preciosAccMascotas.add(149.00);
         nombresAccMascotas.add("Correa Retráctil 5 metros");           preciosAccMascotas.add(34.90);
@@ -848,7 +773,7 @@ public class PROMART {
 
     
     public static void subCategoria(ArrayList<String> nombres, ArrayList<Double> precios, String titulo) {
-        System.out.println("\n=== PRODUCTOS DE " + titulo + " ===");
+        System.out.println("=== PRODUCTOS DE " + titulo + " ===");
         mostrarLista(nombres, precios);
 
         System.out.print("Selecciona un producto (0 para volver): ");
