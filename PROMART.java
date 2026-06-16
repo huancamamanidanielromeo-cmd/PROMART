@@ -12,7 +12,7 @@ public class PROMART {
 
     static Scanner escaner = new Scanner(System.in);
 
-    //usuario datos xd
+    //datos del usuario xd
     static String correoRegistrado = "";
     static String correoLogin     = "";
     static String contraRegistrada = "";
