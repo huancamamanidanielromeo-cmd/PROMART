@@ -27,11 +27,11 @@ public class PROMARTfinalbien {
     static double precio            = 0.0;
     static double total             =0.0;
 
-    // ======================== CARRITO DE COMPRAS ========================
+    // CARRITO DE COMPRAS 
     static ArrayList<String>  carritoNombres    = new ArrayList<>();
     static ArrayList<Double>  carritoPrecios    = new ArrayList<>();
     static ArrayList<Integer> carritoCantidades = new ArrayList<>();
-    // ======================== LISTAS DE PRODUCTOS ========================
+    // LISTAS DE PRODUCTOS 
 
     // Abel
     static ArrayList<String> nombresLimpieza      = new ArrayList<>();
@@ -205,7 +205,7 @@ public class PROMARTfinalbien {
         }
     }
 
-    // ======================== PANEL DE ADMINISTRADOR  ========================
+    // PANEL DE ADMINISTRADOR
 
     public static void menuAdmin() {
         int opcion = 0;
@@ -267,8 +267,8 @@ public class PROMARTfinalbien {
             "ComidaPerros", "ComidaGatos", "AccMascotas"
     };
 
-    // Devuelve el par (nombres, precios) de la categoría elegida
-    static ArrayList<String> getNombres(int cat) {
+// nombres, precio de la categoría elegida
+    static ArrayList<String> getNombresint cat) {
         switch (cat) {
             case  1: return nombresLimpieza;
             case  2: return nombresTecnologia;
@@ -365,7 +365,7 @@ public class PROMARTfinalbien {
         return cat;
     }
 
-    // ---------- CREAR ----------
+    // - CREAR 
     public static void crudCrear() {
         System.out.println("--- REGISTRAR NUEVO PRODUCTO ---");
         int cat = elegirCategoriaCRUD();
@@ -385,7 +385,7 @@ public class PROMARTfinalbien {
         System.out.println("Producto registrado correctamente en " + nombresCategoriasCRUD[cat - 1] + ".");
     }
 
-    // ---------- MODIFICAR ----------
+    // MODIFICAR 
     public static void crudModificar() {
         System.out.println("--- ACTUALIZAR PRODUCTO ---");
         int cat = elegirCategoriaCRUD();
@@ -420,7 +420,7 @@ public class PROMARTfinalbien {
         System.out.println("Producto actualizado correctamente.");
     }
 
-    // ---------- ELIMINAR ----------
+    // ELIMINAR 
     public static void crudEliminar() {
         System.out.println("--- ELIMINAR PRODUCTO ---");
         int cat = elegirCategoriaCRUD();
@@ -456,7 +456,7 @@ public class PROMARTfinalbien {
         }
     }
 
-    // ---------- BUSCAR ----------
+    // BUSCAR 
     public static void crudBuscar() {
         System.out.println("--- BUSCAR PRODUCTO ---");
         System.out.print("Ingrese el nombre o parte del nombre a buscar: ");
@@ -480,10 +480,8 @@ public class PROMARTfinalbien {
 
         if (!encontrado) System.out.println("No se encontro ningun producto con ese nombre.");
     }
-    // ======================== CARRITO DE COMPRAS ========================
-
+    //  CARRITO DE COMPRAS 
     public static void agregarAlCarrito(String nombre, double precioUnitario, int cantidad) {
-        // Si ya existe el producto en el carrito, suma la cantidad
         for (int i = 0; i < carritoNombres.size(); i++) {
             if (carritoNombres.get(i).equals(nombre)) {
                 carritoCantidades.set(i, carritoCantidades.get(i) + cantidad);
@@ -504,7 +502,7 @@ public class PROMARTfinalbien {
             System.out.println("El carrito esta vacio.");
             return;
         }
-        System.out.println("\n================ TU CARRITO DE COMPRAS ================");
+        System.out.println("================ TU CARRITO DE COMPRAS ================");
         double totalCarrito = 0;
         for (int i = 0; i < carritoNombres.size(); i++) {
             double subtotalItem = carritoPrecios.get(i) * carritoCantidades.get(i);
@@ -536,7 +534,7 @@ public class PROMARTfinalbien {
                         System.out.println("El carrito esta vacio, agrega productos primero.");
                     } else {
                         procesarCompraCarrito();
-                        op = 5; // salir del menú después de comprar
+                        op = 5; 
                     }
                     break;
                 case 2:
@@ -736,7 +734,7 @@ public class PROMARTfinalbien {
     }
 
 
-    // ======================== INICIALIZAR DATOS ========================
+    // INICIALIZAR DATOS 
 
     public static void inicializarDatos() {
         // 1. LIMPIEZA
@@ -813,7 +811,7 @@ public class PROMARTfinalbien {
         nombresHerramientas.add("Set de Destornilladores Tramontina (6 pzas)");           preciosHerramientas.add(39.00);
         nombresHerramientas.add("Medidor de Distancia Láser Makita");                     preciosHerramientas.add(249.00);
 
-        //  PISOS Y CERÁMICOS
+        //  PISOS Y CERAMICOS
         nombresPisos.add("Porcelanato Pulido 60x60 cm Gris (m2)");              preciosPisos.add(39.90);
         nombresPisos.add("Piso Laminado Madera 8mm (m2)");                      preciosPisos.add(45.90);
         nombresPisos.add("Cerámico Pared Blanco Brillante 30x45 cm (m2)");      preciosPisos.add(24.90);
@@ -832,7 +830,7 @@ public class PROMARTfinalbien {
         nombresIluminacion.add("Foco LED UFO Orange E27 15W Luz Fría");                    preciosIluminacion.add(12.90);
         nombresIluminacion.add("Pack x2 Foco Led G95 7W Luz Cálida Ámbar Orange");        preciosIluminacion.add(29.90);
 
-        //  ORGANIZACIÓN Y DECOHOGAR
+        //  ORGANIZACION Y DECOHOGAR
         nombresOrganizacion.add("Alfombra Juego Mundo 80x150cm");                              preciosOrganizacion.add(27.00);
         nombresOrganizacion.add("Lámpara Colgante Calada 18cm Alto Astronauta");               preciosOrganizacion.add(35.60);
         nombresOrganizacion.add("Juego x6 piezas Vaso Alto Labrado 330ml Y6015");             preciosOrganizacion.add(27.00);
@@ -868,7 +866,7 @@ public class PROMARTfinalbien {
         nombresDormitorio.add("Cómoda Perú 4 cajones 1 puerta TV 40 Tuhome");           preciosDormitorio.add(599.00);
         nombresDormitorio.add("Cómoda Praga 3 Cajones 1 Puerta Abatible Wengue");       preciosDormitorio.add(450.00);
 
-        // 13. CONSTRUCCIÓN
+        // 13. CONSTRUCCION
         nombresConstruccion.add("Plancha de Drywall Gyplac Standard 3/8\" 1.22x2.44m");    preciosConstruccion.add(31.90);
         nombresConstruccion.add("Tablero melamina cendra escandinavo 18mm 7x8 Vesto");     preciosConstruccion.add(189.00);
         nombresConstruccion.add("Techo calamina metálica Roja 0.22mm 3.60x0.80m Werken"); preciosConstruccion.add(39.90);
@@ -892,7 +890,7 @@ public class PROMARTfinalbien {
         nombresElectricidad.add("Cámara Hikvision 2Mp H.265 Wifi Nvs Kit 2 Bullet");      preciosElectricidad.add(399.00);
         nombresElectricidad.add("Llave Termomagnética Bipolar 2x25A Bticino");             preciosElectricidad.add(45.00);
 
-        //  GASFITERÍA
+        //  GASFITERIA
         nombresGasfiteria.add("Tanque de Agua Arena Rotoplas Plus 1100L + Kit");          preciosGasfiteria.add(749.00);
         nombresGasfiteria.add("Tanque de agua Pro 1100 litros Negro + Kit");              preciosGasfiteria.add(529.00);
         nombresGasfiteria.add("Electrobomba Periférica Werken 0.5 HP 32L/min Alum.");     preciosGasfiteria.add(129.00);
@@ -1004,13 +1002,10 @@ public class PROMARTfinalbien {
             System.out.println((i + 1) + ". " + nombres.get(i));
         }
     }
-
-    // MENÚ  
-
+    // MENU
     public static void menuCategorias() {
         int opcionCategoria = 0;
-        while (opcionCategoria != 25) {
-            System.out.println();
+        while (opcionCategoria != 25);
             System.out.println("___________________ CATEGORIAS DISPONIBLES ___________________");
             System.out.println("1.  Limpieza");
             System.out.println("2.  Tecnologia");
@@ -1232,7 +1227,6 @@ public class PROMARTfinalbien {
     }
 
     // PROCESAR COMPRA 
-
     public static void procesarCompra(double precioCalculado) {
         System.out.println();
         System.out.println("___________________ DATOS PERSONALES ___________________");
@@ -1292,7 +1286,6 @@ public class PROMARTfinalbien {
         System.out.println("\nPresione ENTER para continuar...");
         escaner.nextLine();
     }
-
     // GENERAR  BOLETA
 
     public static void imprimirBoleta(double total) {
